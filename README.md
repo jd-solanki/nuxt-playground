@@ -1,63 +1,16 @@
-# Nuxt 3 Minimal Starter
+# Nuxt Deployment
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Via Docker
 
-## Setup
+_(stop nginx server on port 80 if running)_
 
-Make sure to install the dependencies:
+1. run `docker build -t nuxt-app .`
+2. run `docker-compose up`
+3. Go to `localhost/nuxt-app/demo/` (We are serving on this URL to make sure our nuxt app is deployed successfully)
+4. Go to `localhost/nuxt-app/demo-1/` (app won't run)
 
-```bash
-# npm
-npm install
+## Manually
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+1. Copy nginx config from `.config` dir
+2. Copy nuxt app to defined path according to nginx config
+3. Build the app & serve it using `node .output/server/index.mjs`
