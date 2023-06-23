@@ -1,9 +1,10 @@
+// import mkcert from 'vite-plugin-mkcert';
 import vuetify from "vite-plugin-vuetify";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: '/vuexy-vuejs-admin-template/demo/',
+    baseURL: '/nuxt-app/demo/',
   },
   appConfig: {
     themeConfig: {
@@ -14,8 +15,12 @@ export default defineNuxtConfig({
   build: { transpile: ["vuetify"] },
   devtools: { enabled: true },
   vite: {
+    // server: {
+    //   https: true
+    // },
     plugins: [
-      vuetify()
+      vuetify(),
+      // mkcert()
     ]
   },
 })

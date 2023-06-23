@@ -5,6 +5,5 @@ const appConfig = useAppConfig()
 <template>
     <div>
         <h1>Theme: {{ appConfig.themeConfig.theme }}</h1>
-        <VBtn color="primary">Awesome</VBtn>
     </div>
 </template>
